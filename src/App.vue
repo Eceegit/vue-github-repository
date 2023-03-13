@@ -1,16 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <GitHubUI />
+  <GitHubFetch/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GitHubFetch from './components/GitHubFetch.vue';
+import GitHubUI from './components/GitHubUI.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    GitHubFetch,
+    GitHubUI
+}
 }
 </script>
 
