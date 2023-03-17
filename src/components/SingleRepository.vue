@@ -2,7 +2,7 @@
        <div> 
           <h1>{{ data.name }}</h1>
           <p>ID: {{ data.id }}</p>
-          <!-- <p>URL: <a :href="repository.html_url" target="_blank">{{ repository.html_url }}</a></p> -->
+          <p>URL: <a href="html_url" target="_blank">{{ data.html_url }}</a></p>
           <p>Language: {{ data.language }}</p>
           <!-- <p>Owner: {{ data.owner.login }}</p> -->
         </div> 

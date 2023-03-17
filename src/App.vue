@@ -1,14 +1,14 @@
 <template>
+  <GitHubUI /> 
   <!-- <HomePage /> -->
-   <!-- <GitHubUI />  -->
   <!-- <GitHubFetch/>  -->
   <!-- <SingleRepository />  -->
   <RouterView></RouterView>
  </template> 
 
 <script>
+import GitHubUI from './components/GitHubUI.vue';
 // import HomePage from './components/HomePage.vue';
-// import GitHubUI from './components/GitHubUI.vue';
 // import GitHubFetch from './components/GitHubFetch.vue';
 // import SingleRepository from './components/SingleRepository.vue';
 
@@ -16,8 +16,8 @@
 export default {
   name: 'App',
   components: {
+    GitHubUI,
     // HomePage
-    // GitHubUI,
     // GitHubFetch,
     // SingleRepository,
  }
