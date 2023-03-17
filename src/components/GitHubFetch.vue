@@ -1,12 +1,15 @@
 <template>
     <div>
-      <div>
+      <div v-if="loading" classs="text-center font-bold text-2xl">Please wait a sec!</div>
+      <div v-else>
+        <div>
         <!--Displaying repositories fetched from the GitHub API -->
-          <div v-for="repository in paginationHandler" :key="repository.id">
+          <div v-for="repository in paginationHandler" :key="repository.id" class="flex flex-auto justify-around">
               <h1>{{repository.name}}</h1>
-              <button @click="router.push(`/data/${repository.id}`)">See More </button>
+              <button @click="router.push(`/data/${repository.id}`)" class='bg-sky-600 p-2 font-semibold text-sm mt-4 rounded text-yellow-300'>See More </button>
           </div>
         <div>
+      </div>
           <!-- <table>
             <thead>
               <tr>
@@ -65,9 +68,10 @@
       
       setup() {
           const repositories = ref([]);
+          const loading = ref(true)
           const page = ref(1);
           const perPage = ref(4);
-          
+
           const router = useRouter()
   
       const paginationHandler = computed(() => {
@@ -83,7 +87,11 @@
       const fetchRepositories = () => {
         fetch('https://api.github.com/users/Eceegit/repos')
           .then(response => response.json())
-          .then(data => (repositories.value = data))
+          .then(data => {
+            repositories.value = data
+            loading.value = false
+
+          })
           .catch(error => console.log('Error Encountered when fetching data:', error));
       };
   
@@ -112,11 +120,11 @@
   
       return {
         repositories,
+        loading,
         page,
         perPage,
         paginationHandler,
         totalPages,
-        // viewRepository,
         setPage,
         prevPage,
         nextPage,

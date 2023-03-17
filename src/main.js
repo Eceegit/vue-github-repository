@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import GitHubFetch from './components/GitHubFetch.vue'
 import SingleRepository from './components/SingleRepository.vue'
 import HomePage from './components/HomePage.vue'
+import './assets/tailwind.css'
+import('@/assets/main.css')
 
 const router = createRouter({
   history: createWebHistory(),
