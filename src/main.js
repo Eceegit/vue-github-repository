@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import GitHubFetch from './components/GitHubFetch.vue'
 import SingleRepository from './components/SingleRepository.vue'
 import HomePage from './components/HomePage.vue'
+import NotFoundPage from './components/NotFoundPage.vue'
 import './assets/tailwind.css'
 import('@/assets/main.css')
 
@@ -24,6 +25,11 @@ const router = createRouter({
       path: '/data/:id',
       name: 'SingleRepository',
       component: SingleRepository
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFoundPage',
+      component: NotFoundPage
     }
   ]
 })
