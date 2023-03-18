@@ -4,10 +4,6 @@
       <div v-else>
         <div class="flex flex-col justify-between mx-4 md:mx-32 lg:mx-64 flex-wrap">
         <!--Displaying repositories fetched from the GitHub API -->
-          <!-- <div v-for="repository in paginationHandler" :key="repository.id" class="flex flex-auto justify-around">
-              <h1>{{repository.name}}</h1>
-              <button @click="router.push(`/data/${repository.id}`)" class='bg-sky-600 p-2 font-semibold text-sm mt-4 rounded text-yellow-300'>See More </button>
-          </div> -->
           <table>
             <thead>
               <tr class=" text-lg md:text-2xl ">
@@ -93,10 +89,6 @@
           .catch(error => console.log('Error Encountered when fetching data:', error));
       };
   
-    //   const viewRepository = (id) => {
-    //     router.push({ name: 'SingleRepository', params: { id } });
-    //     console.log(id)
-    //   };
   
       const setPage = pageNumber => {
         page.value = pageNumber;

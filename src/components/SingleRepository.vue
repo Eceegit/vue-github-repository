@@ -6,14 +6,13 @@
               <div class="text-center text-2xl ">
                   <p><span class="font-semibold">ID: </span> {{ data.id }}</p>
                   <br/>
-                  <h1><span class="font-semibold">Name: </span> {{ data.name }}</h1>
-                  <br/>
-                  <p><span class="font-semibold ">URL: </span> <a :href="data.html_url" target="_blank">{{ data.html_url }}</a></p>
+                  <h1><span class="font-semibold px-1">Name: </span> {{ data.name }}</h1>
                   <br/>
                   <p><span class="font-semibold">Language: </span> {{ data.language }}</p>
                   <br/>
                   <p><span class="font-semibold">Visibility: </span> {{ data.visibility }}</p>
-                  <br/>
+                  
+                  <p><a :href="data.html_url" target="_blank"><button class='text-sky-600 p-5 font-semibold text-lg  rounded bg-white'>Github</button></a></p>
                   
                   <!-- <p>Owner: {{ data.owner.login }}</p> -->
                   <router-link to="/repositories"> <button class='bg-sky-600 p-4 font-semibold text-xl mt-12 rounded text-yellow-300'>Go to Respositories</button></router-link> 
